@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="easy">
+<head>
+{% load static %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="{% static "css/reset.css" %}">
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+</head>
+<body>
+<div class="demo">
+	<div class="easyform">
+    	<div class="title">
+        	<div class="titleword">Demo</div>
+            <div class="titledes"><i>with Angular & Djanjo</i></div>
+            <div class="titleimg"><img src="{% static "images/titleimg.png" %}" /></div>
+        </div>
+        <form name="angForm" ng-controller="registerCtrl" ng-submit="formSubmit(angForm.$valid)" novalidate autocomplete="off" class="angForm">
+            <input 
+            name="username" 
+            ng-model="username" 
+            ng-minlength="5" 
+            ng-maxlength="20" 
+            ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{5,20}$/" 
+            required 
+            placeholder="用户名"
+            >
+            <div class="hint">
+            	<p ng-if="angForm.username.$pristine && angForm.username.$touched">请填写用户名</p>
+                <p ng-if="angForm.username.$touched && angForm.username.$error.minlength">不应少于5个字符</p>
+                <p ng-if="angForm.username.$touched && angForm.username.$error.maxlength">不应超过20个字符</p>
+                <p ng-if="angForm.username.$touched && angForm.username.$error.pattern && !angForm.username.$error.maxlength && !angForm.username.$error.minlength">请填写子母、数字组合</p>
+            </div>
+            
+            <input 
+            type="email"
+            name="email" 
+            ng-model="email" 
+            ng-pattern="/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/" 
+            required 
+            placeholder="邮箱"
+            >
+            <div class="hint">
+            	<p ng-if="angForm.email.$pristine && angForm.email.$touched">请填写邮箱</p>
+                <p ng-if="angForm.email.$touched && angForm.email.$error.pattern">邮箱格式非法</p>
+            </div>
+            
+            
+            <input 
+            type="password" 
+            name="password" 
+            ng-model="password" 
+            ng-minlength="5" 
+            ng-maxlength="20" 
+            ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{5,20}$/" 
+            required 
+            placeholder="密码"
+            >
+            <div class="hint">
+            	<p ng-if="angForm.password.$pristine && angForm.password.$touched">请填写密码</p>
+                <p ng-if="angForm.password.$touched && angForm.password.$error.minlength">不应少于5个字符</p>
+                <p ng-if="angForm.password.$touched && angForm.password.$error.maxlength">不应超过20个字符</p>
+                <p ng-if="angForm.password.$touched && angForm.password.$error.pattern && !angForm.password.$error.maxlength && !angForm.password.$error.minlength">请填写子母、数字组合</p>
+            </div>
+            
+            
+            <input
+            type="password"  
+            name="affirm" 
+            ng-model="affirm" 
+            custom-affirm="{password:angForm.password,affirm:angForm.affirm}"
+            required 
+            placeholder="确认密码"
+            >
+            <div class="hint">
+            	<p ng-if="angForm.affirm.$pristine && angForm.affirm.$touched">请填写密码</p>
+                <p ng-if="angForm.affirm.$touched && angForm.affirm.$error.customAffirm">密码不一致</p>
+            </div>
+            
+            
+            <div class="hint">
+                <p>|[subbtn.hint]|</p>
+            </div>
+            <button type="submit" class="subbutton" >确认</button>
+            
+        </form>
+    </div>
+</div>
+</body>
+</html>
+<script src="{% static "js/angular.js" %}" ></script>
+<script src="{% static "js/register.js" %}" ></script>

@@ -1,0 +1,84 @@
+@charset "utf-8";
+.demo{
+	background: rgba(90,94,155,1);
+	position: relative;
+	margin: 0 auto;
+	width: 60%;
+	height: 700px;
+	}
+.easyform{
+	background: rgba(238,238,238,1);
+	position: relative;
+	margin: 0 auto;
+	top: 80px;
+	width: 60%;
+	text-align: center;
+	}
+.easyform .title{
+	height: 150px;
+	width: 100%;
+	background: rgba(255,255,255,1);
+	margin-bottom: 20px;
+	}
+.easyform .title .titleword{
+	top:20px;
+	left: 40px;
+	position: absolute;
+	font-size: 35px;
+	}
+.easyform .title .titledes{
+	top:80px;
+	left: 40px;
+	position: absolute;
+	font-size: 15px;
+	}
+.easyform .title .titleimg{
+	top:30px;
+	right: 80px;
+	background: rgba(150,150,150,0);
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	font-size: 15px;
+	}
+.easyform .title .titleimg img{
+	width: 100%;
+	}
+.easyform .fillscope{
+	height: 360px;
+	}
+.easyform input{
+	width: 80%;
+	height: 30px;
+	position: relative;
+	margin: 5px auto;
+	}
+.easyform .hint{
+	width: 80%;
+	height: 10px;
+	position: relative;
+	font-size: 10px;
+	margin: 5px auto;
+	}
+.subbutton{
+	display: inline-block;
+	margin: 10px;
+	height: 40px;
+	width: 80%;
+	border-radius: 10px;
+	background: rgba(25,185,227,1);
+	line-height: 40px;
+	vertical-align: middle;
+	}
+.subbutton:hover{
+	cursor: pointer;
+	}
+.angForm .ng-pristine {
+	border: 3px rgba(200,200,200,1) solid;
+	}
+.angForm .ng-touched {
+	border: 3px red solid;
+	}
+.angForm .ng-valid {
+	border: 3px green solid;
+	}
