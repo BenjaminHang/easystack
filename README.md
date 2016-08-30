@@ -1,0 +1,3 @@
+采用angular内置的validate验证表单合法性
+
+angular检测到form表单时，会根据form名字在该controller的scope下创建这个名字的变量，angular内置了许多directive来验证各个数据项的合法性，对于表单下的input等元素，angular会自动添加很多属性，如$invalid,$invalidators,后这是我们添加的验证函数（即指令），
